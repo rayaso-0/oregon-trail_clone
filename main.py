@@ -74,7 +74,7 @@ while True:
     if beginning_location_dia2.isdigit():
         beginning_location_dia2 = int(beginning_location_dia2)
         if beginning_location_dia2 == 1:
-
+            break
 
 # finish shop
 shop1 = ("\nWelcome to the shop...\nYou were graciously given a wagon by the townsfolks. This is where you will take the money you saved up and buy all the supplies that you need.\n")
