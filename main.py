@@ -1,6 +1,19 @@
 import time
 import random
 
+def func_ask_for_score():
+    ask_for_score = str(input("\nDo you want to see your current score? (y/n): "))
+    while True:
+        if ask_for_score == "y":
+            score_index = (f"\nYou're choices have given you a difficulty score of {score}\n")
+            print(score_index)
+            break
+        if ask_for_score == "n":
+            print("Okay!")
+            break
+        else:
+            print("\nPlease input either 'y' or 'n'\n")
+
 welcome = ("Welcome to the Oregon Trail")
 name = input("What is your name?: ")
 wife = input("What is your wifes name?: ")
@@ -8,9 +21,10 @@ son = input("What is your sons name?: ")
 daughter = input("What is your daughters name?: ")
 
 
-intro1 = ("\nOut here, its tough for you and your family. But rumor has it that theres GOLD out west. Across the country...\n\nYou realize that theres nothing here for your family so you want to set off to the west in search of gold. This is the start of your journey...\n")
+intro1 = ("\nOut here in the east, its tough for you and your family. But rumor has it that theres GOLD out west. Across the country...\n\nYou realize that theres nothing here for your family so you want to set off to the west in search of gold. This is the start of your journey...\n")
 money = 0
-score = [0]
+score = 0
+current_month = 0
 
 for i in str(welcome):
     print(i, end="", flush=True)
@@ -24,6 +38,7 @@ while True:
     if difficulty.isdigit():
         difficulty = int(difficulty)
         if difficulty == 1:
+            score = score + 15
             money = 1000
             starting_location = ("Nashville, Tennesee")
             distance = 2128
@@ -33,6 +48,7 @@ while True:
                  time.sleep(0.03)
             break
         if difficulty == 2:
+            score = score + 10
             money = 1500
             starting_location = ("Champaign, Illinios")
             distance = 2130
@@ -42,6 +58,7 @@ while True:
                 time.sleep(0.03)
             break
         if difficulty == 3:
+            score = score + 5
             money = 2000
             starting_location = ("New York, New York")
             distance = 2441 
@@ -59,6 +76,7 @@ while True:
         print("\nPlease input one of the choices...\n")
 
 intro2 = (f"\nYou have ${money}\n")
+
 for i in str(intro2):
     print(i, end="", flush=True)
     time.sleep(0.03)
@@ -68,39 +86,92 @@ for i in str(beginning_location_dia1):
     print(i, end="", flush=True)
     time.sleep(0.03)
 
-# finish starting month
 while True:
     beginning_location_dia2 = input("\nYou must choose what month that you want to leave:\n1. March\n2. April\n3. May\n4. June\n5. July\n6. Ask for Advice\nWhat is your choice?: ")
     if beginning_location_dia2.isdigit():
         beginning_location_dia2 = int(beginning_location_dia2)
         if beginning_location_dia2 == 1:
+            score = score + 10
+            current_month = 3
+            month_1 = ("You chose March. You must hate winter.")
+            for i in str(month_1):
+                print(i, end="", flush=True)
+                time.sleep(0.03)
             break
+        if beginning_location_dia2 == 2:
+            score = score + 7
+            current_month = 4
+            month_2 = ("You chose April. Pretty early.")
+            for i in str(month_2):
+                print(i, end="", flush=True)
+                time.sleep(0.03)
+            break
+        if beginning_location_dia2 == 3:
+            score = score + 5
+            current_month = 5
+            month_3 = ("You chose May. Really good choice")
+            for i in str(month_3):
+                print(i, end="", flush=True)
+                time.sleep(0.03)
+            break
+        if beginning_location_dia2 == 4:
+            score = score + 7
+            current_month = 6
+            month_4 = ("You chose June. Ok choice.")
+            for i in str(month_4):
+                print(i, end="", flush=True)
+                time.sleep(0.03)
+            break
+        if beginning_location_dia2 == 5:
+            score = score + 10
+            current_month = 7
+            month_5 = ("You chose July. Kind of late don't you think?")
+            for i in str(month_5):
+                print(i, end="", flush=True)
+                time.sleep(0.03)
+            break
+        if beginning_location_dia2 == 6:
+            tavern_meeting_dia = ('\nYou attend a public meeting held for "folks with the --Gold Rush--", Youre told:\n"If you leave too early, there wont be any grass for your oxen to graze on. If you leave too late, you may not to Oregon before winter comes. If you leave at the right time, there will be enough grass and the weather will still be cool."\n')
+            for i in str(tavern_meeting_dia):
+                print(i, end="", flush=True)
+                time.sleep(0.03)
+    else:
+        print("\nMake sure to input a number!\n")
+
+
+func_ask_for_score()
+
+intro3 = ("You still got a bit of time before you leave. Head to the shop and grab what you think you'll need on the trip. ")
+for i in str(intro3):
+    print(i, end="", flush=True)
+    time.sleep(0.03)
+
 
 # finish shop
-shop1 = ("\nWelcome to the shop...\nYou were graciously given a wagon by the townsfolks. This is where you will take the money you saved up and buy all the supplies that you need.\n")
-for i in str(shop1):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
+#shop1 = ("\nWelcome to the shop...\nYou were graciously given a wagon by the townsfolks. This is where you will take the money you saved up and buy all the supplies that you need.\n")
+#for i in str(shop1):
+#    print(i, end="", flush=True)
+#    time.sleep(0.03)
+#
+#shop1_dia1 = ("\n!!! The shop keep tells you, you must buy at least oxen and food !!!\n")
+#for i in str(shop1_dia1):
+#    print(i, end="", flush=True)
+#    time.sleep(0.03)
+#
+#while True:
+#    shop1_dia2 = input("\n1. Oxen\n2. Food\n3. Extra Wagon Parts\n4. ")
 
-shop1_dia1 = ("\n!!! You must buy at least oxen and food !!!\n")
-for i in str(shop1_dia1):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
 
-while True:
-    shop1_dia2 = input("\n1. Oxen\n2. Food\n3. Extra Wagon Parts\n4. ")
-
-
-while True:
-    choice1 = input("\nChoose the number of oxen you want to bring (Choose at least 2): \n")
-    if choice1.isdigit():
-        choice1 = int(choice1)
-        if 2 <= choice1 <7:
-                    break
-        else:
-            print("\nWhy would you even need this many oxen??\n")
-    else:
-        print("Input a number please.")
+# while True:
+#    choice1 = input("\nChoose the number of oxen you want to bring (Choose at least 2): \n")
+#    if choice1.isdigit():
+#        choice1 = int(choice1)
+#        if 2 <= choice1 <7:
+#                    break
+#        else:
+#            print("\nWhy would you even need this many oxen??\n")
+#    else:
+#        print("Input a number please.")
 
 
 
