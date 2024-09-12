@@ -22,9 +22,18 @@ daughter = input("What is your daughters name?: ")
 
 
 intro1 = ("\nOut here in the east, its tough for you and your family. But rumor has it that theres GOLD out west. Across the country...\n\nYou realize that theres nothing here for your family so you want to set off to the west in search of gold. This is the start of your journey...\n")
+
+# game info 
 money = 0
 score = 0
 current_month = 0
+
+# items
+oxen_count = 0
+lb_food = 0 
+clothing = 0
+ammunition = 0
+spare_parts = 0
 
 for i in str(welcome):
     print(i, end="", flush=True)
@@ -148,30 +157,53 @@ for i in str(intro3):
 
 
 # finish shop
-#shop1 = ("\nWelcome to the shop...\nYou were graciously given a wagon by the townsfolks. This is where you will take the money you saved up and buy all the supplies that you need.\n")
-#for i in str(shop1):
-#    print(i, end="", flush=True)
-#    time.sleep(0.03)
-#
-#shop1_dia1 = ("\n!!! The shop keep tells you, you must buy at least oxen and food !!!\n")
-#for i in str(shop1_dia1):
-#    print(i, end="", flush=True)
-#    time.sleep(0.03)
-#
-#while True:
-#    shop1_dia2 = input("\n1. Oxen\n2. Food\n3. Extra Wagon Parts\n4. ")
+shop1_dia1 = ("\nWelcome to the shop...\nYou were graciously given a wagon by the townsfolks. This is where you will take the money you saved up and buy all the supplies that you need.\n")
+for i in str(shop1_dia1):
+    print(i, end="", flush=True)
+    time.sleep(0.03)
 
+shop1_dia2 = ("\nThe shop keep tells you that you don't have to spend all your money now. You are able to buy, Oxen, Food, Clothing, Ammunition, and Spare Wagon Parts. Make to to buy what you need. Not any more, not any less.\n")
+for i in str(shop1_dia2):
+    print(i, end="", flush=True)
+    time.sleep(0.03)
 
-# while True:
-#    choice1 = input("\nChoose the number of oxen you want to bring (Choose at least 2): \n")
-#    if choice1.isdigit():
-#        choice1 = int(choice1)
-#        if 2 <= choice1 <7:
-#                    break
-#        else:
-#            print("\nWhy would you even need this many oxen??\n")
-#    else:
-#        print("Input a number please.")
+while True:
+    shop1_dia3 = input("\n1. How many oxen do you want to purchase? Each is $100 (You must buy at least two)\n")
+    if shop1_dia3.isdigit():
+        shop1_dia3 = int(shop1_dia3)
+        if shop1_dia3 <= 1:
+            oxen_dia1 = ("Please purchase at least two oxen.")
+            for i in str(oxen_dia1):
+                print(i, end="", flush=True)
+                time.sleep(0.03)
+        if 2 <= shop1_dia3 < 11:
+            confirm_1 = input(f"You have purchased {shop1_dia3} oxen.")
+            oxen_count = shop1_dia3 + oxen_count
+            money = money - (100 * oxen_count)
+            print(f"You have {money} left with {oxen_count} oxen to your name. ")
+            break
+        if shop1_dia3 > 11:
+            print("The shopkeep says he only has 10 oxen left avaliable for you to purchase.")
+    else:
+        confirm_2 = ("Please input a number")
+
+while True:
+    shop1_dia4 = input("\n1. How many lb of food do you want to purchase? Each is $2 (You must buy at least two)\n")
+    if shop1_dia4.isdigit():
+        shop1_dia4 = int(shop1_dia4)
+        if shop1_dia4 <= 1:
+            food_dia1 = ("\nPlease purchase at least two oxen.\n")
+            for i in str(food_dia1):
+                print(i, end="", flush=True)
+                time.sleep(0.03)
+        if 2 <= shop1_dia4 < 7:
+            confirm_1a = input(f"\nYou have purchased {shop1_dia4} oxen.\n")
+            break
+        if shop1_dia4 > 7:
+            print("\nThe shopkeep says he only has 6 oxen left avaliable.\n")
+    else:
+        confirm_2a = ("\nPlease input a number\n")
+
 
 
 
