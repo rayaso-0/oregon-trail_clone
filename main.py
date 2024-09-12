@@ -14,6 +14,10 @@ def func_ask_for_score():
         else:
             print("\nPlease input either 'y' or 'n'\n")
 
+def typing_animation():
+    print(i, end="",flush=True)
+    time.sleep(0.03)
+     
 welcome = ("Welcome to the Oregon Trail")
 name = input("What is your name?: ")
 wife = input("What is your wifes name?: ")
@@ -36,11 +40,10 @@ ammunition = 0
 spare_parts = 0
 
 for i in str(welcome):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
+    typing_animation()
 for i in str(intro1):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
+    typing_animation()
+
 
 while True:
     difficulty = input("\nThis is where you can choose your background.\n1. Farmer from Tennesee.\n2. Carpenter from Illinois.\n3. Banker from New York.\n4. Find out the difference between each background.\nWhat is your choice?: ")
@@ -53,8 +56,7 @@ while True:
             distance = 2128
             diff_ch1 = ("You chose Farmer. You and your family have been farming for years now but recent back to back droughts have made your profits dwindle every year. You plan on taking all your savings and invest into this trip...\n")
             for i in str(diff_ch1):
-                 print(i, end="", flush=True)
-                 time.sleep(0.03)
+                 typing_animation()
             break
         if difficulty == 2:
             score = score + 10
@@ -63,8 +65,7 @@ while True:
             distance = 2130
             diff_ch2 = ("You chose Carpenter. You have been running a semi-successful wooding cutting business but everyone has been moving out west so business lately has been pretty slow. You've racked up some savings that you now will use on the trip.\n")
             for i in str(diff_ch2):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+                typing_animation()
             break
         if difficulty == 3:
             score = score + 5
@@ -73,27 +74,23 @@ while True:
             distance = 2441 
             diff_ch3 = ("You chose Banker. You have been a very successful business man but you want to be set free. Everyday feels that same in your gloomy town that is New York. You want adventure. Your wife's been nagging you about moving so you finally cave and take the bait of the recent news you heard about there being gold in the west. You always wanted to be even more rich so this is an opportunity that you cannot miss. You have a lot of saving and you are ready to go.\n")
             for i in str(diff_ch3):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+                typing_animation()
             break
         if difficulty == 4:
             diff_ch4 = ("This choice may change how you play the game. Think carefully.\nThe Banker starts out with the most most amount of money but its harder to get points. \nThe Farmer starts out with the least amount of points but is able to get points the easiest. \nThe Carpenter is someone inbetween.\n")
             for i in str(diff_ch4):
-                 print(i, end="", flush=True)
-                 time.sleep(0.03)
+                 typing_animation()
     else:
         print("\nPlease input one of the choices...\n")
 
 intro2 = (f"\nYou have ${money}\n")
 
 for i in str(intro2):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
+    typing_animation()
 
 beginning_location_dia1 = (f"\nIt is 1848. You are leaving from {starting_location} which is {distance} mi away. You got a lot of ground to cover!")
 for i in str(beginning_location_dia1):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
+    typing_animation()
 
 while True:
     beginning_location_dia2 = input("\nYou must choose what month that you want to leave:\n1. March\n2. April\n3. May\n4. June\n5. July\n6. Ask for Advice\nWhat is your choice?: ")
@@ -104,46 +101,40 @@ while True:
             current_month = 3
             month_1 = ("You chose March. You must hate winter.")
             for i in str(month_1):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+                typing_animation()
             break
         if beginning_location_dia2 == 2:
             score = score + 7
             current_month = 4
             month_2 = ("You chose April. Pretty early.")
             for i in str(month_2):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+                typing_animation()
             break
         if beginning_location_dia2 == 3:
             score = score + 5
             current_month = 5
             month_3 = ("You chose May. Really good choice")
             for i in str(month_3):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+                typing_animation()
             break
         if beginning_location_dia2 == 4:
             score = score + 7
             current_month = 6
             month_4 = ("You chose June. Ok choice.")
             for i in str(month_4):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+                typing_animation()
             break
         if beginning_location_dia2 == 5:
             score = score + 10
             current_month = 7
             month_5 = ("You chose July. Kind of late don't you think?")
             for i in str(month_5):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+                typing_animation()
             break
         if beginning_location_dia2 == 6:
             tavern_meeting_dia = ('\nYou attend a public meeting held for "folks with the --Gold Rush--", Youre told:\n"If you leave too early, there wont be any grass for your oxen to graze on. If you leave too late, you may not to Oregon before winter comes. If you leave at the right time, there will be enough grass and the weather will still be cool."\n')
             for i in str(tavern_meeting_dia):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+                typing_animation()
     else:
         print("\nMake sure to input a number!\n")
 
@@ -152,57 +143,85 @@ func_ask_for_score()
 
 intro3 = ("You still got a bit of time before you leave. Head to the shop and grab what you think you'll need on the trip. ")
 for i in str(intro3):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
+    typing_animation()
 
 
 # finish shop
 shop1_dia1 = ("\nWelcome to the shop...\nYou were graciously given a wagon by the townsfolks. This is where you will take the money you saved up and buy all the supplies that you need.\n")
 for i in str(shop1_dia1):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
+    typing_animation()
 
-shop1_dia2 = ("\nThe shop keep tells you that you don't have to spend all your money now. You are able to buy, Oxen, Food, Clothing, Ammunition, and Spare Wagon Parts. Make to to buy what you need. Not any more, not any less.\n")
+shop1_dia2 = ("\nThe shop keep tells you that you don't have to spend all your money now. You are able to buy, Oxen, Food, Sets of Clothing, Ammunition, and Spare Wagon Parts. Make to to buy what you need. Not any more, not any less.\n")
 for i in str(shop1_dia2):
-    print(i, end="", flush=True)
-    time.sleep(0.03)
+    typing_animation()
 
 while True:
-    shop1_dia3 = input("\n1. How many oxen do you want to purchase? Each is $100 (You must buy at least two)\n")
+    shop1_dia3 = input("\nHow many oxen do you want to purchase? Each is $100 (You must buy at least two): ")
     if shop1_dia3.isdigit():
         shop1_dia3 = int(shop1_dia3)
         if shop1_dia3 <= 1:
-            oxen_dia1 = ("Please purchase at least two oxen.")
-            for i in str(oxen_dia1):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
+            oxen_dia1 = ("\nPlease purchase at least two oxen.\n")
+            typing_animation()
         if 2 <= shop1_dia3 < 11:
-            confirm_1 = input(f"You have purchased {shop1_dia3} oxen.")
+            confirm_1 = (f"\nYou have purchased {shop1_dia3} oxen.\n")
             oxen_count = shop1_dia3 + oxen_count
             money = money - (100 * oxen_count)
-            print(f"You have {money} left with {oxen_count} oxen to your name. ")
-            break
+            print(f"\nYou have ${money} left with {oxen_count} oxen to your name.\n")
+            confirmation = input("\nWould you like to buy more oxen? (y/n): ")
+            print(confirmation)
+            if confirmation == "y":
+                confirmation = True
+            if confirmation == "n":
+                confirmation = False
+            if confirmation == False:
+                break
         if shop1_dia3 > 11:
             print("The shopkeep says he only has 10 oxen left avaliable for you to purchase.")
     else:
         confirm_2 = ("Please input a number")
 
 while True:
-    shop1_dia4 = input("\n1. How many lb of food do you want to purchase? Each is $2 (You must buy at least two)\n")
+    shop1_dia4 = input("\nIt is $10 per lb. How many lb of food do you want to purchase?: ")
     if shop1_dia4.isdigit():
         shop1_dia4 = int(shop1_dia4)
         if shop1_dia4 <= 1:
-            food_dia1 = ("\nPlease purchase at least two oxen.\n")
+            food_dia1 = ("\nPlease purchase at least some food...\n")
             for i in str(food_dia1):
-                print(i, end="", flush=True)
-                time.sleep(0.03)
-        if 2 <= shop1_dia4 < 7:
-            confirm_1a = input(f"\nYou have purchased {shop1_dia4} oxen.\n")
+                typing_animation()
+        if 2 <= shop1_dia4 <= 100:
+            money = money - (shop1_dia4 * 10)
+            lb_food = lb_food + shop1_dia4
+            confirm_1a = input(f"\nYou have purchased {shop1_dia4} lb of food with ${money} left.\n")
             break
-        if shop1_dia4 > 7:
-            print("\nThe shopkeep says he only has 6 oxen left avaliable.\n")
+        if shop1_dia4 > 100:
+            print("\nThe shopkeep says he only has 100lb of food for sale.\n")
     else:
         confirm_2a = ("\nPlease input a number\n")
+        print(confirm_2a)
+
+while True:
+    shop1_dia5 = input("\n It is $20 per set of clothing. How many sets of clothes do you want to buy? (You must buy at least 2): ")
+    if shop1_dia5.isdigit():
+        shop1_dia5 = int(shop1_dia5)
+        if shop1_dia5 <= 2:
+            clothing_dia1 = ("\nPlease purchase the minimum of 2 sets. (You won't survive without them)")
+            print(clothing_dia1)
+        if 3 <= shop1_dia5 <= 10:
+            confirm_3 = input(f"\nYou have purchased {shop1_dia5} sets of clothign with ${money} left.\n")
+            clothing = clothing + shop1_dia5
+            money = money - (shop1_dia5 * 20)
+    else:
+        confirm_3a = ("\nPlease input a number\n")
+
+
+
+
+
+
+
+
+
+
 
 
 
