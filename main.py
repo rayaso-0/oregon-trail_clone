@@ -17,7 +17,13 @@ def func_ask_for_score():
 def typing_animation():
     print(i, end="",flush=True)
     time.sleep(0.03)
-     
+
+def distance_roll():
+    min_value = 1
+    max_value = 6
+    roll = random.randint(min_value, max_value)
+    return roll
+
 welcome = ("Welcome to the Oregon Trail")
 name = input("What is your name?: ")
 wife = input("What is your wifes name?: ")
@@ -31,6 +37,7 @@ intro1 = ("\nOut here in the east, its tough for you and your family. But rumor 
 money = 0
 score = 0
 current_month = 0
+distance = 0
 
 # items
 oxen_count = 0
@@ -44,7 +51,7 @@ for i in str(welcome):
 for i in str(intro1):
     typing_animation()
 
-
+# Choose Difficulty (what your backstory is)
 while True:
     difficulty = input("\nThis is where you can choose your background.\n1. Farmer from Tennesee.\n2. Carpenter from Illinois.\n3. Banker from New York.\n4. Find out the difference between each background.\nWhat is your choice?: ")
     if difficulty.isdigit():
@@ -92,6 +99,7 @@ beginning_location_dia1 = (f"\nIt is 1848. You are leaving from {starting_locati
 for i in str(beginning_location_dia1):
     typing_animation()
 
+# Choose Month 
 while True:
     beginning_location_dia2 = input("\nYou must choose what month that you want to leave:\n1. March\n2. April\n3. May\n4. June\n5. July\n6. Ask for Advice\nWhat is your choice?: ")
     if beginning_location_dia2.isdigit():
@@ -141,12 +149,11 @@ while True:
 
 func_ask_for_score()
 
-intro3 = ("You still got a bit of time before you leave. Head to the shop and grab what you think you'll need on the trip. ")
+intro3 = ("\nYou still got a bit of time before you leave. Head to the shop and grab what you think you'll need on the trip.\n")
 for i in str(intro3):
     typing_animation()
 
-
-# finish shop
+# Shop
 shop1_dia1 = ("\nWelcome to the shop...\nYou were graciously given a wagon by the townsfolks. This is where you will take the money you saved up and buy all the supplies that you need.\n")
 for i in str(shop1_dia1):
     typing_animation()
@@ -155,6 +162,7 @@ shop1_dia2 = ("\nThe shop keep tells you that you don't have to spend all your m
 for i in str(shop1_dia2):
     typing_animation()
 
+# Oxen
 while True:
     shop1_dia3 = input("\nHow many oxen do you want to purchase? Each is $100 (You must buy at least two): ")
     if shop1_dia3.isdigit():
@@ -178,8 +186,10 @@ while True:
         if shop1_dia3 > 11:
             print("The shopkeep says he only has 10 oxen left avaliable for you to purchase.")
     else:
-        confirm_2 = ("Please input a number")
+        print("\nMake sure to input a number!\n")
 
+
+# Food
 while True:
     shop1_dia4 = input("\nIt is $10 per lb. How many lb of food do you want to purchase?: ")
     if shop1_dia4.isdigit():
@@ -191,14 +201,21 @@ while True:
         if 2 <= shop1_dia4 <= 100:
             money = money - (shop1_dia4 * 10)
             lb_food = lb_food + shop1_dia4
-            confirm_1a = input(f"\nYou have purchased {shop1_dia4} lb of food with ${money} left.\n")
-            break
+            print (f"\nYou have purchased {shop1_dia4} lb of food with ${money} left.\n")
+            confirmation = input("\nWould you like to buy more lb of food? (y/n): ")
+            print(confirmation)
+            if confirmation == "y":
+                confirmation = True
+            if confirmation == "n":
+                confirmation = False
+            if confirmation == False:
+                break
         if shop1_dia4 > 100:
             print("\nThe shopkeep says he only has 100lb of food for sale.\n")
     else:
-        confirm_2a = ("\nPlease input a number\n")
-        print(confirm_2a)
+        print("\nMake sure to input a number!\n")
 
+# Clothing
 while True:
     shop1_dia5 = input("\n It is $20 per set of clothing. How many sets of clothes do you want to buy? (You must buy at least 2): ")
     if shop1_dia5.isdigit():
@@ -207,12 +224,110 @@ while True:
             clothing_dia1 = ("\nPlease purchase the minimum of 2 sets. (You won't survive without them)")
             print(clothing_dia1)
         if 3 <= shop1_dia5 <= 10:
-            confirm_3 = input(f"\nYou have purchased {shop1_dia5} sets of clothign with ${money} left.\n")
             clothing = clothing + shop1_dia5
             money = money - (shop1_dia5 * 20)
+            print(f"\nYou have purchased {shop1_dia5} sets of clothign with ${money} left.\n")
+            confirmation = input("\nWould you like to buy more lb of food? (y/n): ")
+            print(confirmation)
+            if confirmation == "y":
+                confirmation = True
+            if confirmation == "n":
+                confirmation = False
+            if confirmation == False:
+                break
     else:
-        confirm_3a = ("\nPlease input a number\n")
+        print("\nMake sure to input a number!\n")
 
+# Ammo
+while True:
+    shop1_dia6 = input("\nIt is $1 per piece of Ammunition. How much Ammunition do you want to buy?: ")
+    if shop1_dia6.isdigit():
+        shop1_dia6 = int(shop1_dia6)
+        if shop1_dia6 <= 2:
+            ammo_dia1 = ("\nPlease purchase the minimum of 1 ammo. (You won't survive without it)")
+            print(clothing_dia1)
+        if 3 <= shop1_dia6 <= 10:
+            clothing = clothing + shop1_dia6
+            money = money - (shop1_dia6 * 20)
+            print(f"\nYou have purchased {shop1_dia6} sets of clothing with ${money} left.\n")
+            confirmation = input("\nWould you like to buy more lb of food? (y/n): ")
+            print(confirmation)
+            if confirmation == "y":
+                confirmation = True
+            if confirmation == "n":
+                confirmation = False
+            if confirmation == False:
+                break
+            else:
+                print("Please input 'y' or 'n'.")
+    else:
+        print("\nMake sure to input a number!\n")
+
+# Spare Wagon Parts
+while True:
+    shop1_dia7 = input("\nIt is $250 per set of Spare Wagon Parts. How many sets do you want to buy?: ")
+    if shop1_dia7.isdigit():
+        shop1_dia7 = int(shop1_dia7)
+        if shop1_dia7 == 0:
+            spare_parts_dia1 = ("\nYou sure you don't want to purchase any? (y/n): ")
+            print(spare_parts_dia1)
+            if spare_parts_dia1 == "n":
+                spare_parts_dia1 = True
+            if spare_parts_dia1 == "y":
+                spare_parts_dia1 = False
+            if spare_parts_dia1 == False:
+                break
+            else:
+                print("Please input 'y' or 'n'.")
+        if  1 <= shop1_dia1 >= 4:
+            spare_parts = spare_parts + shop1_dia7
+            money = money - (shop1_dia7 * 250)
+            print(f"\nYou have purchased {shop1_dia7} sets of clothing with ${money} left.\n")
+            confirmation = input("\nWould you like to buy more Spare Parts? (y/n): ")
+            print(confirmation)
+            if confirmation == "y":
+                confirmation = True
+            if confirmation == "n":
+                confirmation = False
+            if confirmation == False:
+                break
+            else:
+                print("Please input 'y' or 'n'.")
+    else:
+        print("\nMake sure to input a number!\n")
+
+# Final Summary
+summary_dia1 = ("\nHere is a summary of your trip and everything that you : \n")
+for i in str(summary_dia1):
+    typing_animation()
+
+summary_dai2 = (f"\n You are leaving in the month of {current_month}.\n You have {money} left over.\nYou have {oxen_count} oxen.\nYou have {lb_food} lb of food.\nYou have {clothing} sets of clothing for you and your family.\nYou have {ammunition} bullets of ammunition.\nYou have {spare_parts} sets of spare parts for your wagon.")
+for i in str(summary_dai2):
+    typing_animation()
+
+# End Intro
+while True:
+    summary_dai3 = input("Are you ready to go? (y/n)")
+    for i in str(summary_dai3):
+        typing_animation()
+    if summary_dai3 == "y":
+        summary_ch1 = (f"Good. Your journey of {distance} grueling miles begins now...")
+        for i in str(summary_ch1):
+            typing_animation()
+            break
+    if summary_dai3 == "n":
+        summary_ch2 = (f"Too bad, Your journey of {distance} grueling miles begins now...")
+        for i in str(summary_ch2):
+            typing_animation()
+            break
+
+
+
+
+
+            
+
+            
 
 
 
