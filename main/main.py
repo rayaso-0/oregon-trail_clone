@@ -266,8 +266,6 @@ while True:
             if confirmation == "y":
                 confirmation = True
             if confirmation == "n":
-                confirmation = False
-            if confirmation == False:
                 break
     else:
         print("\nMake sure to input a number!\n")
