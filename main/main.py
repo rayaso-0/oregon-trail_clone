@@ -359,17 +359,31 @@ while True:
     summary_dai3 = input("\nAre you ready to go? (y/n): ")
     print(summary_dai3)
     if summary_dai3 == "y":
-        summary_ch1 = (f"Good. Your journey of {distance} grueling miles begins now...")
+        summary_ch1 = (f"\nGood. Your journey of {distance} grueling miles begins now...\n")
         for i in str(summary_ch1):
             typing_animation()
-            break
+        break
     if summary_dai3 == "n":
-        summary_ch2 = (f"Too bad, Your journey of {distance} grueling miles begins now...")
+        summary_ch2 = (f"\nToo bad, Your journey of {distance} grueling miles begins now...\n")
         for i in str(summary_ch2):
             typing_animation()
-            break
+        break
     else:
-        print("Please input either y/n...")
+        print("\nPlease input either y/n...\n")
+
+rules_1 = ("\nNow this is how the game works. You will roll a dice everyday to determine how much distance you travel. Depending on how far you go, the more food you consume. And the farther along you are, the higher chance for are part of your wagon to not work. Your wagon can have up to four things break before you have to use a set of Spare Wagon Parts. If you run out of sets of Spare Wagon Parts, then each day you will travel less and less until you either finally make it to your destination or lose the game completely becuase your wagon has broekn down completely. Everything else is self explanatory. \nGood luck... You'll need it.\n")
+for i in str(rules_1):
+    typing_animation()
+
+max_distance = distance
+player_distance = 0
+
+# Game
+while max(player_distance) < distance:
+    current_score = score
+
+
+
 
 
 
@@ -380,12 +394,6 @@ while True:
             
 
             
-
-
-
-
-
-
 
 
 
